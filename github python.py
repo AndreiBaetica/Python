@@ -34,6 +34,7 @@ qe_solver(a1,b1,c1)
 
 
 #Prints a word in a column. Letters separated by stars.
+    '''(str)->None'''
 def column_stars(word):
     for a in word:
         print(a)
