@@ -31,3 +31,12 @@ b1=float (input("Enter a number for the coefficient b: "))
 c1=float (input("Enter a number for the coefficient c: "))
 
 qe_solver(a1,b1,c1)
+
+
+#Prints a word in a column. Letters separated by stars.
+def column_stars(word):
+    for a in word:
+        print(a)
+        print("***")
+
+
