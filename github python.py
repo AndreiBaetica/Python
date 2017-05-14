@@ -33,11 +33,19 @@ c1=float (input("Enter a number for the coefficient c: "))
 qe_solver(a1,b1,c1)
 
 
-#Prints a word in a column. Letters separated by stars.
-    '''(str)->None'''
+#Prints a word in a column. Letters separated by stars.  
 def column_stars(word):
+    '''(str)->None'''
     for a in word:
         print(a)
         print("***")
 
 
+#Counts the values in a string.
+def count_vowels(string):
+    '''(str)->int'''
+    counter=0
+    for x in string:
+        if x in 'aeiouAEIOU':
+            counter=counter+1
+    return counter
