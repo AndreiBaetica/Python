@@ -41,7 +41,7 @@ def column_stars(word):
         print("***")
 
 
-#Counts the values in a string.
+#Counts the vowels in a string.
 def count_vowels(string):
     '''(str)->int'''
     counter=0
