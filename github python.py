@@ -49,3 +49,14 @@ def count_vowels(string):
         if x in 'aeiouAEIOU':
             counter=counter+1
     return counter
+
+
+#Removes all non-vowel characters in a string.
+def only_vowels(string):
+    '''(str)->str'''
+    vowels=''
+    for a in string:
+        if a in 'aeiouAEIOU':
+            vowels=vowels+a
+    return vowels
+
