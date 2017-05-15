@@ -60,3 +60,14 @@ def only_vowels(string):
             vowels=vowels+a
     return vowels
 
+
+#Prints x number of rectangles.
+def rectangles(x):
+    for i in range(x):
+        print('********')
+        print('*      *')
+        print('*      *')
+        print('*      *')
+        print('*      *')
+        print('*      *')
+        print('********')
