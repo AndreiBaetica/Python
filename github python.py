@@ -63,6 +63,7 @@ def only_vowels(string):
 
 #Prints x number of rectangles.
 def rectangles(x):
+    '''(int)->none'''
     for i in range(x):
         print('********')
         print('*      *')
@@ -71,3 +72,18 @@ def rectangles(x):
         print('*      *')
         print('*      *')
         print('********')
+
+
+#Counts to x.
+def counter(x):
+    '''(int)->none'''
+    for i in range(x):
+        print(i+1)
+
+
+#Prints even numbers only.
+def even_only(x):
+	'''(int)->none'''
+	for i in range(x):
+		if i%2==0:
+			print(i)
