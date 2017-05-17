@@ -30,3 +30,20 @@ if op1=='a':
         multinput=multinput+1
     multanswer=functools.reduce(operator.mul,multlist,1)
     print("The product is:",str(multanswer)+".")
+elif op1=='b':
+    add1=input("State how many numbers you wish to add: ")
+    try:
+        int(add1)
+    except:
+        ValueError or add1=='1'
+        print("Invalid input.")
+        add1=input("State how many factors you wish to multiply: ")
+        int(add1)
+    a1=float(input("Enter the first number: "))
+    addlist=[a1]
+    addinput=0
+    while addinput<int(add1)-1:
+        addlist.append(float(input("Enter the next factor: ")))
+        addinput=addinput+1
+    addanswer=sum(addlist)
+    print("The sum is:",str(addanswer)+".")
