@@ -15,18 +15,36 @@ while not (op1=='a' or op1=='b' or op1=='c'):
     op1=input("Choose one of three functions: a) Multiplication, b) Addition, c) Division: ")
 if op1=='a':
     fac1=input("State how many factors you wish to multiply: ")
-    try:
-        int(fac1)
-    except:
-        ValueError or fac1=='1'
-        print("Invalid input.")
-        fac1=input("State how many factors you wish to multiply: ")
-        int(fac1)
-    f1=float(input("Enter the first factor: "))
-    multlist=[f1]
+    while 1==1:
+        try:
+            int(fac1)
+            break
+        except:
+            ValueError or fac1=='1'
+            print("Invalid input.")
+            fac1=input("State how many factors you wish to multiply: ")
+    f1=input("Enter the first factor: ")
+    while 1==1:
+        try:
+            float(f1)
+            break
+        except:
+            ValueError
+            print("Invalid input.")
+            f1=input("Enter the first factor: ")
+    multlist=[float(f1)]
     multinput=0
     while multinput<int(fac1)-1:
-        multlist.append(float(input("Enter the next factor: ")))
+        fn=input("Enter the next factor: ")
+        while 1==1:
+            try:
+                float(fn)
+                break
+            except:
+                ValueError
+                print("Invalid input.")
+                fn=input("Enter a valid response: ")
+        multlist.append(float(fn))
         multinput=multinput+1
     multanswer=functools.reduce(operator.mul,multlist,1)
     print("The product is:",str(multanswer)+".")
