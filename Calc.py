@@ -1,13 +1,6 @@
 
-
-
-
-
-
-
 import operator
 import functools
-
 
 op1=input("Choose one of three functions: a) Multiplication, b) Addition, c) Division: ")
 while not (op1=='a' or op1=='b' or op1=='c'):
@@ -19,8 +12,7 @@ if op1=='a':
         try:
             int(fac1)
             break
-        except:
-            ValueError or fac1=='1'
+        except ValueError or fac1=='1':
             print("Invalid input.")
             fac1=input("State how many factors you wish to multiply: ")
     f1=input("Enter the first factor: ")
@@ -28,8 +20,7 @@ if op1=='a':
         try:
             float(f1)
             break
-        except:
-            ValueError
+        except ValueError:
             print("Invalid input.")
             f1=input("Enter the first factor: ")
     multlist=[float(f1)]
@@ -40,8 +31,7 @@ if op1=='a':
             try:
                 float(fn)
                 break
-            except:
-                ValueError
+            except ValueError:
                 print("Invalid input.")
                 fn=input("Enter a valid response: ")
         multlist.append(float(fn))
@@ -52,8 +42,7 @@ elif op1=='b':
     add1=input("State how many numbers you wish to add: ")
     try:
         int(add1)
-    except:
-        ValueError or add1=='1'
+    except ValueError or add1=='1':
         print("Invalid input.")
         add1=input("State how many factors you wish to multiply: ")
         int(add1)
