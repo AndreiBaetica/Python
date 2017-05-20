@@ -40,17 +40,33 @@ if op1=='a':
     print("The product is:",str(multanswer)+".")
 elif op1=='b':
     add1=input("State how many numbers you wish to add: ")
-    try:
-        int(add1)
-    except ValueError or add1=='1':
-        print("Invalid input.")
-        add1=input("State how many numbers you wish to add: ")
-        int(add1)
-    a1=float(input("Enter the first number: "))
-    addlist=[a1]
+    while 1==1:
+        try:
+            int(add1)
+            break
+        except ValueError or add1=='1':
+            print("Invalid input.")
+            add1=input("State how many numbers you wish to add: ")
+    a1=input("Enter the first number: ")
+    while 1==1:
+        try:
+            float(a1)
+            break
+        except ValueError:
+            print("Invalid input.")
+            a1=input("Enter the first number: ")    
+    addlist=[float(a1)]
     addinput=0
     while addinput<int(add1)-1:
-        addlist.append(float(input("Enter the next number: ")))
+        an=input("Enter the next number: ")
+        while 1==1:
+            try:
+                float(an)
+                break
+            except ValueError:
+                print("Invalid input.")
+                an=input("Enter the next number: ")    
+        addlist.append(float(an))
         addinput=addinput+1
     addanswer=sum(addlist)
     print("The sum is:",str(addanswer)+".")
