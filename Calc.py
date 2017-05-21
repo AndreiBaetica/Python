@@ -71,11 +71,22 @@ elif op1=='b':
     addanswer=sum(addlist)
     print("The sum is:",str(addanswer)+".")
 else:
-    num=float(input("Enter the divident: "))
-    denom=float(input("Enter the divisor: "))
-    while denom==0.0:
-        print("Invalid input.")
-        denom=float(input("Enter the divisor: "))
-    divanswer=num/denom
+    num=input("Enter the divident: ")
+    while 1==1:
+        try:
+            float(num)
+            break
+        except ValueError:
+            print("Invalid input.")
+            num=input("Enter the divident: ")
+    denom=input("Enter the divisor: ")
+    while 1==1:
+        try:
+            float(denom)
+            break
+        except ValueError:
+            print("Invalid input.")
+            denom=input("Enter the divisor: ")
+    divanswer=float(num)/float(denom)
     print("The answer is:",str(divanswer)+".")
     
