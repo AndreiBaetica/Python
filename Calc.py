@@ -87,6 +87,12 @@ else:
         except ValueError:
             print("Invalid input.")
             denom=input("Enter the divisor: ")
-    divanswer=float(num)/float(denom)
+    while 1==1:
+        try:
+            divanswer=float(num)/float(denom)
+            break
+        except ZeroDivisionError:
+            print("Invalid input, cannot divide by zero.")
+            denom=input("Enter the divisor: ")
     print("The answer is:",str(divanswer)+".")
     
