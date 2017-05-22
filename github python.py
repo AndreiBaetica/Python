@@ -87,3 +87,20 @@ def even_only(x):
 	for i in range(x):
 		if i%2==0:
 			print(i)
+
+def fibonnaci_sequence():
+    n=int(input("State how many Fibonnaci sequence numbers to generate: "))
+    y=1
+    if n==0:
+        f=[]
+    elif n==1:
+        f=[1]
+    elif n==2:
+        f=[1,1]
+    elif n>2:
+        f=[1,1]
+        while y<(n-1):
+            f.append(f[y]+f[y-1])
+            y+=1
+        return f
+
