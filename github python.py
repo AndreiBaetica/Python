@@ -88,7 +88,9 @@ def even_only(x):
 		if i%2==0:
 			print(i)
 
+#Generates a Fibonnaci sequence up to a given number.
 def fibonnaci_sequence():
+    '''(None)->list'''
     n=int(input("State how many Fibonnaci sequence numbers to generate: "))
     y=1
     if n==0:
