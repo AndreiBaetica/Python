@@ -106,3 +106,21 @@ def fibonnaci_sequence():
             y+=1
         return f
 
+#Generates two random lists of 100 integers, and prints only the numbers found in both.
+import random
+
+lst1=[]
+lst2=[]
+for a in range(0,99):
+    a=random.randint(1,100)
+    lst1.append(a)
+for b in range(0,99):
+    b=random.randint(1,100)
+    lst2.append(b)
+result=[]
+for x in lst1:
+    if x in lst2:
+        result.append(x)
+print(set(result))
+
+
