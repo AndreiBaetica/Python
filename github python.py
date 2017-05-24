@@ -125,14 +125,15 @@ def duplicateChecker():
             result.append(x)
     git aprint(set(result))
 
-
+#Generates a 10 character long random password.
 import random
 def passwordGenerator():
+    '''(None)->None'''
     password='!@#$%^&*()_+1234567890-=QWERTYUIOP{}|qwertyuiop[]\ASDFGHJKL:asdfghjkl;ZXCVBNM<>?zxcvbnm,./'
     r=random.sample(password,10)
     Input=""
     while Input!="exit":
-        Input=input("Press ender to generate new password or type exit to exit ")
+        Input=input("Press enter to generate new password or type exit to exit ")
         if Input =="":
             r=random.sample(password,10)
             r="".join(r)
