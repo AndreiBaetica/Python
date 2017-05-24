@@ -126,4 +126,18 @@ def duplicateChecker():
     git aprint(set(result))
 
 
+import random
+def passwordGenerator():
+    password='!@#$%^&*()_+1234567890-=QWERTYUIOP{}|qwertyuiop[]\ASDFGHJKL:asdfghjkl;ZXCVBNM<>?zxcvbnm,./'
+    r=random.sample(password,10)
+    Input=""
+    while Input!="exit":
+        Input=input("Press ender to generate new password or type exit to exit ")
+        if Input =="":
+            r=random.sample(password,10)
+            r="".join(r)
+            print (r)
+        elif Input =="exit" or "Exit":
+            break
+            exit()
 
