@@ -1,3 +1,4 @@
+#Gives the headlines from the specified url.
 import requests
 from bs4 import BeautifulSoup
 url='http://warthunder.com/en/news/'
