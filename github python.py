@@ -123,7 +123,7 @@ def duplicateChecker():
     for x in lst1:
         if x in lst2:
             result.append(x)
-    git aprint(set(result))
+    print(set(result))
 
 #Generates a 10 character long random password.
 import random
@@ -150,9 +150,8 @@ def prime():
     for y in range(1,x+1):
         if x%y==0:
             div.append(y)        
-    if len(div)>2:
-        print("Not prime.")
-    elif x==0 or x==1:
-        print("Not prime.")
-    else:
+    if len(div)==2:
         print("Prime.")
+    else:
+        print("Not prime.")
+
