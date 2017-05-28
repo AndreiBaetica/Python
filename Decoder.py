@@ -9,3 +9,5 @@ for heading in soup.find_all(class_="news-item__anons"):
         print(heading.a.text.replace("\n"," ").strip())
     else:
         print(heading.contents[0].strip())
+
+
