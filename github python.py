@@ -155,8 +155,10 @@ def prime():
     else:
         print("Not prime.")
 
+#Plays rock-paper-scissors against the CPU
 import random
 def rps():
+    '''(None)->None'''
     u=input("R/P/S? ")
     q=["R","P","S"]
     c=random.choice(q)
