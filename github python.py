@@ -155,3 +155,31 @@ def prime():
     else:
         print("Not prime.")
 
+import random
+def rps():
+    u=input("R/P/S? ")
+    q=["R","P","S"]
+    c=random.choice(q)
+    print("CPU's choice:"+c)
+    if u=="R":
+        if c=="R":
+            print("Draw")
+        elif c=="P":
+            print("Defeat")
+        elif c=="S":
+            print("Victory")
+    elif u=="P":
+        if c=="R":
+            print("Victory")
+        elif c=="P":
+            print("Draw")
+        elif c=="S":
+            print("Defeat")
+    elif u=="S":
+        if c=="R":
+            print("Defeat")
+        elif c=="P":
+            print("Victory")
+        elif c=="S":
+            print("Draw")
+    
