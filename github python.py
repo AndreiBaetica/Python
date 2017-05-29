@@ -184,4 +184,13 @@ def rps():
             print("Victory")
         elif c=="S":
             print("Draw")
+
+#Linear search function.
+def linear_search(L,v):
+    n=len(L)
+    for i in range(n):
+        if L[i]==v:
+            return i
+    return -1
+
     
