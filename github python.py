@@ -194,3 +194,12 @@ def linear_search(L,v):
     return -1
 
     
+#Selection sort algorithm. O(n**2)
+def selection_sort(L):
+    '''(list)->None'''
+    for i in range(len(L)-1):
+        min_index=i
+        for j in range(i,len(L)):
+            if L[j]<L[min_index]:
+                min_index=j
+        L[i], L[min_index]=L[min_index], L[i]
