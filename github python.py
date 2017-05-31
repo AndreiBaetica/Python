@@ -203,3 +203,33 @@ def selection_sort(L):
             if L[j]<L[min_index]:
                 min_index=j
         L[i], L[min_index]=L[min_index], L[i]
+
+
+# merge sort algorithm O(log n)
+def merge_sort(L):
+    if len(L)>1:
+        mid=len(L)//2
+        left=L[:mid]
+        right=L[mid:]
+        merge_sort(left)
+        merge_sort(right)
+        i=0
+        j=0
+        k=o
+        while i<len(left) and j<len(right):
+            if left[i]<right[j]:
+                L[k]=left[i]
+                i=i+1
+            else:
+                L[k]=right[j]
+                j=j+1
+            k=k+1
+        while i<len(left):
+            L[k]=left[i]
+            i=i+1
+            k=k+1
+        while i<len(right):
+            L[k]=right[j]
+            j=j+1
+            k=k+1
+        
