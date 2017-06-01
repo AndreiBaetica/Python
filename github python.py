@@ -233,3 +233,11 @@ def merge_sort(L):
             j=j+1
             k=k+1
         
+#Determines whether a string is a palindrome.
+def palindrome(wrd)
+    wrd=str(wrd)
+    rvs=wrd[::-1]
+    if wrd==rvs:
+        print("Palindrome")
+    else:
+        print("Not palindrome")
