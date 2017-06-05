@@ -16,3 +16,13 @@ for i in range(30):
     m.forward(40+delta)
     m.left(360/n+delta)
     
+class point:
+    def __init__(self,col,xcoord=0,ycoord=0,):
+        self.colour=col
+        self.x=xcoord
+        self.y=ycoord
+    def move(self,dx,dy):
+        self.x=self.x+dx
+        selfy=self.y+dy
+
+u=point.__init__('green', 4,8)
