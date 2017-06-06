@@ -24,5 +24,10 @@ class point:
     def move(self,dx,dy):
         self.x=self.x+dx
         self.y=self.y+dy
-
-u=point.__init__('green', 4,8)
+    def get(self):
+        return (self.x,self.y)
+    def __eq__(self,other):
+        if self.x==other.x and self.y==other.y:
+            return True
+        else:
+            return False
