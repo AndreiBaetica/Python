@@ -31,3 +31,17 @@ class point:
             return True
         else:
             return False
+    def __rep__(self):
+        return 'point('+str(self.x)+','+str(self.y)+')'
+
+class card:
+    def __init__(self,rank,suit):
+        self.rank=rank
+        self.suit=suit
+    def getRank(self):
+        return self.rank
+    def getSuit(self):
+        return self.suit
+    def setRank(self,rank):
+        self.rank=rank
+    
