@@ -52,9 +52,38 @@ class card:
         else:
             return False
 
+import random
 class deck:
     ranks={'2','3','4','5','6','7','8','9','10','J','Q','K','A'}
     suits={'\u2660','\u2661','\u2662','\u2663'}
-    for rank in ranks:
-        for suit in suits:
-            print(rank,suit)
+    def __init__(self):
+        self.deck=[]
+        for rank in deck.ranks:
+            for suit in deck.suits:
+                self.deck.append(Card(rank,suit))
+    def shuffle(self):
+        random.shuffle(self.deck)
+    def dealCard(self):
+        return self.deck.pop()
+    def __len__(self):
+        return len(self.deck)
+
+class animal:
+    def __init__(self,species,language):
+        self.spec=species
+        self.lang=language
+        def get(self):
+            return(self.spec,self.lang)
+        def speak(self):
+            print('I am a',self.spec,'and I',self.lang)
+
+class birb(animal):
+    def __init__(bl,self,species,language):
+        self.bl=bl
+        super().__init(species,language)
+    def speak(self):
+        print(3*self.lang)
+    def get(self):
+        print(self.bl,end=' ')
+        super().get()
+
