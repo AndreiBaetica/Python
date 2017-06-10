@@ -242,3 +242,23 @@ def palindrome(wrd):
         print("Palindrome")
     else:
         print("Not palindrome")
+
+def powerSet(a):
+    if len(a)==0:
+        return[[]]
+    pps=powerSet(a[1:])
+    fps=pps[:]
+    for i in pps:
+        fps.appent(i+[a[0]])
+    return fps
+
+def fact(n):
+    if n==0:
+        return 1
+    return n*fact(n-1)
+
+def fact_i(n):
+    p=1
+    for i in range(1,n+1):
+        p=p*i
+    return p
