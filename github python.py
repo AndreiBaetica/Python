@@ -262,3 +262,17 @@ def fact_i(n):
     for i in range(1,n+1):
         p=p*i
     return p
+
+def powr(x,n):
+    if n==0:
+        return 1
+    return x*powr(x,n-1)
+
+def powr_efficient(x,n):
+    if n==0:
+        return 1
+    res=powr_efficient(x,n//2)
+    if n%2==0:
+        return res*res
+    else:
+        return x*res*res
