@@ -75,6 +75,19 @@ def rectangles(x):
         print('********')
 
 
+#Prints x number of rectangles.
+def largeNameAcronym(x):
+    '''(int)->none'''
+    for i in range(x):
+        print('********')
+        print('*      *')
+        print('*      *')
+        print('********')
+        print('*      *')
+        print('*      *')
+        print('*      *')
+
+
 #Counts to x.
 def counter(x):
     '''(int)->none'''
