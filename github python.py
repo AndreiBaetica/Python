@@ -76,7 +76,7 @@ def rectangles(x):
 
 
 #Prints x number of rectangles.
-def nameAcronym(x):
+def myNameAcronym(x):
     '''(int)->none'''
     for i in range(x):
         print('********')
