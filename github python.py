@@ -1,45 +1,30 @@
 #Quadratic Equation Solver
 import math
-def qe_Solver():
-    def qe_solver(a,b,c):
-        '''(number,number,number)->None'''
-        if a==0:
-            if b!=0:
-                print("The linear equation",str(b)+"x+"+str(c)+"=0")
-                print("has the following root:", -c/b)
-            else:
-                if c==0:
-                    print("The equation is always true")
-                else:
-                    print("The equation has no solution")
+
+def qe_solver(a,b,c):
+    '''(number,number,number)->None'''
+    if a==0:
+        if b!=0:
+            print("The linear equation",str(b)+"x+"+str(c)+"=0")
+            print("has the following root:", -c/b)
         else:
-            discr=b**2-4*a*c
-            if discr>=0:
-                x1=(-b+math.sqrt(discr))/(2*a)
-                x2=(-b-math.sqrt(discr))/(2*a)
-                print("The quadratic equation", str(a)+"x^2+"+str(b)+"x+"+str(c)+"=0")
-                print("Has the following two roots:", str(x1)+","+str(x2))
-
+            if c==0:
+                print("The equation is always true")
             else:
-                print("The quadratic equation", str(a)+"x^2+"+str(b)+"x+"+str(c)+"=0")
-                print("has the following two complex roots: ")
-                print(str(-b/(2*a))+"+i"+str(math.sqrt(abs(discr))/(2*a)),"and")
-                print(str(-b/(2*a))+"-i"+str(math.sqrt(abs(discr))/(2*a)),"and")
+                print("The equation has no solution")
+    else:
+        discr=b**2-4*a*c
+        if discr>=0:
+            x1=(-b+math.sqrt(discr))/(2*a)
+            x2=(-b-math.sqrt(discr))/(2*a)
+            print("The quadratic equation", str(a)+"x^2+"+str(b)+"x+"+str(c)+"=0")
+            print("Has the following two roots:", str(x1)+","+str(x2))
 
-    print("Welcome to the quadratic equation solver.")
-    a1=float (input("Enter a number for the coefficient a: "))
-    b1=float (input("Enter a number for the coefficient b: "))
-    c1=float (input("Enter a number for the coefficient c: "))
-
-    qe_solver(a1,b1,c1)
-
-
-#Prints a word in a column. Letters separated by stars.  
-def column_stars(word):
-    '''(str)->None'''
-    for a in word:
-        print(a)
-        print("***")
+        else:
+            print("The quadratic equation", str(a)+"x^2+"+str(b)+"x+"+str(c)+"=0")
+            print("has the following two complex roots: ")
+            print(str(-b/(2*a))+"+i"+str(math.sqrt(abs(discr))/(2*a)),"and")
+            print(str(-b/(2*a))+"-i"+str(math.sqrt(abs(discr))/(2*a)),"and")
 
 
 #Counts the vowels in a string.
@@ -60,32 +45,6 @@ def only_vowels(string):
         if a in 'aeiouAEIOU':
             vowels=vowels+a
     return vowels
-
-
-#Prints x number of rectangles.
-def rectangles(x):
-    '''(int)->none'''
-    for i in range(x):
-        print('********')
-        print('*      *')
-        print('*      *')
-        print('*      *')
-        print('*      *')
-        print('*      *')
-        print('********')
-
-
-#Prints x number of rectangles.
-def myNameAcronym(x):
-    '''(int)->none'''
-    for i in range(x):
-        print('********')
-        print('*      *')
-        print('*      *')
-        print('********')
-        print('*      *')
-        print('*      *')
-        print('*      *')
 
 
 #Counts to x.
@@ -249,6 +208,7 @@ def merge_sort(L):
         
 #Determines whether a string is a palindrome.
 def palindrome(wrd):
+    '''(String)->None'''
     wrd=str(wrd)
     rvs=wrd[::-1]
     if wrd==rvs:

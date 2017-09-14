@@ -1,8 +1,11 @@
-toDo = ["1","2","3"]
+#TODO: fix 'invalid input' block when attempting to remove from empty array
+#TODO: user should not be able to input empty items
+
+toDo = []
 completed = []
 def mainMenu():
     global menuInput
-    menuInput = input("Available commands: 1. Add task, 2. Remove task, 3. Remove completed task, 4. View to-do list, 5. View completed tasks. \n")
+    menuInput = input("Available commands: \n1. Add task \n2. Remove task \n3. Remove completed task \n4. View to-do list \n5. View completed tasks \n")
     while not (menuInput == "1" or menuInput == "2" or menuInput == "3" or menuInput == "4" or menuInput == "5"):
         print("Invalid input.")
         menuInput = input("Available commands: 1. Add task, 2. Remove task, 3. View to-do list, 4. View completed tasks. \n")
