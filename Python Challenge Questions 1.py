@@ -2,32 +2,63 @@ import math
 ###########################
 #Question 1
 ###########################
-'''
-(number)->number
-Converts an mph value to kph.
-'''
 def mh2kh(s):
+    '''
+    (number)->number
+    Converts an mph value to kph.
+    '''
     s = s*1.609344
     return s
 
 ###########################
 #Question 2
 ###########################
-
+def pythagorean_pair(a,b):
+    '''
+    (number,number)->boolean
+    Returns true if math.sqrt(a**2+b**2) is an integer.
+    '''
+    c = math.sqrt(a**2+b**2)
+    return c == int(c)
 
 ###########################
 #Question 3
 ###########################
-
-
+def in_out(xs,ys,side):
+    '''
+    (number,number,number)->none
+    Prompts user to input coordinates, and prints True if the coordinates are within the square
+    created by xs, ys, and side. The coordinates defined by xs and ys represent the lower left
+    corner of the square.
+    Preconditions: side must be positive.
+    '''
+    x = float(input('Enter a number for the x coordinate of a query point: '))
+    y = float(input('Enter a number for the y coordinate of a query point: '))
+    print(xs<=x<=(xs+side) and ys<=y<=(ys+side))
+    
 ###########################
 #Question 4
 ###########################
-
+def safe(n):
+    '''(int)->boolean
+    Returns True if n is NOT divisible by 9 and does not contain 9 as a digit.
+    Preconditions: n is a positive integer and is <100.
+    '''
+    n1=n//10
+    n2=n%10
+    return ((n1!=9 and n2!=9) and n%9!=0)
     
 ###########################
 #Question 5
 ###########################
+def quote_maker(quote,name,year):
+    '''
+    (string,string,int)->string
+    Returns a sentence dispalying all three arguments.
+    '''
+    return ('In '+str(year)+' a person called '+name+' said: "'+quote+'"')
+
+
 ###########################
 #Question 6
 ###########################
