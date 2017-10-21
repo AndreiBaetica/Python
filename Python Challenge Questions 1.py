@@ -62,29 +62,202 @@ def quote_maker(quote,name,year):
 ###########################
 #Question 6
 ###########################
+def quote_displayer():
+    '''
+    (none)->none
+    Asks for user input on a quote, name, and year, and prints the return of quote_maker(quote,name,year)
+    '''
+    quote=input('Give me a quote: ')
+    name=input('Who said that? ')
+    year=input('What year did she/he say that? ')
+    print(quote_maker(quote,name,year))
+
 ###########################
 #Question 7
 ###########################
+def rps_winner():
+    '''
+    (none)->none
+    Plays rock-paper-scissors with two players.
+    Preconditions: Player input is exactly one of the given options (case sensitive).
+    '''
+    p1=input('What choice did player 1 make?\nType one of the following options: rock, paper, scissors: ')
+    p2=input('What choice did player 2 make?\nType one of the following options: rock, paper, scissors: ')
+    print('Player 1 wins. That is '+str(((p1=='rock' and p2=='scissors') or (p1=='paper' and p2=='rock') or (p1=='scissors' and p2=='paper'))))
+    print('It is a tie. That is not '+str(p1!=p2))
+          
+    
 ###########################
 #Question 8
 ###########################
+def fun(x):
+    '''
+    (number)->float
+    Returns the y value for the equation 10**(4*y)==x+3.
+    Precondition:x>0
+    '''
+    #The equation in terms of y is y=(ln(x+3))/((4)ln(10))
+    return (math.log((x+3))/(4*math.log(10)))
+    
 ###########################
 #Question 9
 ###########################
+def ascii_name_plaque(name):
+    '''
+    (str)->none
+    Prints the name surrounded by a box of *
+    '''
+    print((10+len(name))*'*')
+    print('*'+(8+len(name))*' '+'*')
+    print('*  __'+name+'__  *')
+    print('*'+(8+len(name))*' '+'*')
+    print((10+len(name))*'*')
+    
 ###########################
 #Question 10
 ###########################
+def draw_bike():
+    '''
+    (none)->none
+    Draws a car with turtle graphics.
+    '''
+    #The link provided in a1-2017.pdf is a picture of a car, not a bike.
+    s=turtle.Screen()
+    t=turtle.Turtle()
+    t.speed(0)
+    t.goto(100,0)
+    t.goto(-100,0)
+    t.penup()
+    t.goto(-150,-50)
+    t.pendown()
+    t.circle(50)
+    t.penup()
+    t.goto(150,-50)
+    t.pendown()
+    t.circle(50)
+    t.penup()
+    t.penup()
+    t.goto(-200,0)
+    t.pendown()
+    t.left(180)
+    t.forward(50)
+    t.right(90)
+    t.forward(30)
+    t.right(90)
+    t.forward(60)
+    t.goto(-240,30)
+    t.left(90)
+    t.forward(60)
+    t.right(90)
+    t.forward(500)
+    t.right(90)
+    t.forward(60)
+    t.right(90)
+    t.forward(70)
+    t.goto(270,30)
+    t.left(90)
+    t.forward(30)
+    t.right(90)
+    t.forward(70)
+    t.penup()
+    t.goto(-150,30)
+    t.pendown()
+    t.circle(30)
+    t.penup()
+    t.goto(-150,5)
+    t.pendown()
+    t.circle(5)
+    t.right(90)
+    t.forward(25)
+    t.left(90)
+    x1=0
+    while x1!= 5:
+        t.circle(30, 60)
+        t.left(90)
+        t.forward(25)
+        t.left(180)
+        t.forward(25)
+        t.left(90)
+        x1=x1+1
+    t.setheading(180)
+    t.penup()
+    t.goto(150,30)
+    t.pendown()
+    t.circle(30)
+    t.penup()
+    t.goto(150,5)
+    t.pendown()
+    t.circle(5)
+    t.right(90)
+    t.forward(25)
+    t.left(90)
+    x1=0
+    while x1!= 5:
+        t.circle(30, 60)
+        t.left(90)
+        t.forward(25)
+        t.left(180)
+        t.forward(25)
+        t.left(90)
+        x1=x1+1
+    t.setheading(90)
+    t.penup()
+    t.goto(-25,0)
+    t.pendown()
+    t.forward(175)
+    t.left(180)
+    t.goto(-120,175)
+    t.goto(-170,90)
+    t.penup()
+    t.goto(-25,175)
+    t.pendown()
+    t.goto(70,175)
+    t.goto(120,90)
+    t.forward(50)
+    t.penup()
+    t.goto(-240,80)
+    t.pendown()
+    t.left(90)
+    t.forward(20)
+    t.right(90)
+    t.forward(5)
+    t.right(90)
+    t.forward(20)
+    t.penup()
+    t.goto(0,80)
+    t.pendown()
+    t.forward(15)
+    t.left(90)
+    t.forward(5)
+    t.left(90)
+    t.forward(15)
+    t.left(90)
+    t.forward(5)
+    t.penup()
+    t.goto(240,70)
+    t.shape("circle")
+    t.shapesize(1,1.5,1)
+    t.fillcolor("white")
+    
+    
 ###########################
 #Question 11
 ###########################
+def alogical(n):
+    '''
+    (number)->int
+    Returns the minimum number of times that n must be divided by 2 in order to get a number equal to or smaller than 1.
+    Preconditions: x>=1
+    '''
+    return math.ceil(math.log(n,2))
 ###########################
 #Question 12
-###########################
-def time_formater(h,m):
+########################### 
+def time_format(h,m):
     '''
     (int,int)->none
     Returns time in the format of a sentence.
-    Preconditions: TODO
+    Preconditions: h and m are positive. 
     '''
     if 0>h or h>23:
         print('Invalid hour input.')
@@ -93,19 +266,30 @@ def time_formater(h,m):
         print('Invalid minute input.')
         return
     m=5*round(m/5)
-    t='AM'
-    if h>12:
-        t='PM'
-        h=h-12
+    if h==0:
+        h='midnight'
+    if (h=='midnight' and m==0):
+        return('The time is '+h+'.')
     if m==0:
-        print('The time is '+str(h)+" o'clock "+t+'.')
+        return('The time is '+str(h)+" o'clock"+'.')
     elif m==30:
-        print('The time is half past '+str(h),t+'.')
+        return('The time is half past '+str(h)+'.')
+    elif m==60:
+        if h+1==24:
+            return('The time is midnight.')
+        else:
+            return('The time is '+str(h+1)+" o'clock"+'.')
     elif m>30:
-        print('The time is '+str(60-m)+' minutes to '+str(h+1),t+'.')
+        if h+1==24:
+            h='midnight'
+            return('The time is '+str(60-m)+' minutes to '+str(h)+'.')  
+        else:
+            return('The time is '+str(60-m)+' minutes to '+str(h+1)+'.')
     else:
-        print('The time is '+str(m)+' minutes past '+str(h),t+'.')
-     
+        return('The time is '+str(m)+' minutes past '+str(h)+'.')
+    #O'clock is not commonly used except when referring to m==0, so it was purposefully omitted in all other cases.
+    #Added midnight clause to avoid 'The time is 0.' statements. 
+
     
 ###########################
 #Question 13
