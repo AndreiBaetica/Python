@@ -1,0 +1,35 @@
+Python 3.6.0 (v3.6.0:41df79263a11, Dec 22 2016, 17:23:13) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+ RESTART: /Users/vida/Dropbox/courses/python-iti1120-2017/assignment3/A3-game-solved.py 
+
+******************************************
+*                                        *
+*  __Welcome to my Concentration game__  *
+*                                        *
+******************************************
+
+
+Would you like (enter 1 or 2 to indicate your choice):
+(1) me to generate a rigorous deck of cards for you
+(2) or, would you like me to read a deck from a file?
+0
+0 is not existing option. Please try again. Enter 1 or 2 to indicate your choice
+-1
+-1 is not existing option. Please try again. Enter 1 or 2 to indicate your choice
+1
+You chose to have a rigorous deck generated for you
+
+How many cards do you want to play with?
+Enter an even number between 0 and 52: 5
+
+How many cards do you want to play with?
+Enter an even number between 0 and 52: 58
+
+How many cards do you want to play with?
+Enter an even number between 0 and 52: 6
+Shuffling the deck...
+
+
+Press enter to continue. 
