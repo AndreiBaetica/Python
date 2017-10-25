@@ -5,6 +5,7 @@ def shuffle_deck(deck):
        Shuffles the given list of strings representing the playing deck    
     '''
     # YOUR CODE GOES HERE
+    return random.shuffle(deck)
 
 def create_board(size):
     '''int->list of str
@@ -86,7 +87,10 @@ def is_rigorous(l):
     '''
 
     # YOUR CODE GOES HERE
- 
+    for i in l:
+        if l.count(i) != 2:
+            return None
+    return True
                 
         
 
@@ -109,7 +113,17 @@ def play_game(board):
 #main
     
 # YOUR CODE TO GET A CHOICE 1 or CHOCE 2 from a player GOES HERE
-
+choice = input('Choose an option: \n1. Automatically generate a deck. \n2. Import a deck.\n')
+while True:
+    try:
+        choice=int(choice)
+        if choice != 1 and choice != 2:
+            choice=input("Invalid input. \nChoose an option: \n1. Automatically generate a deck. \n2. Import a deck.\n")
+        else:
+            break
+    except ValueError:
+        choice=input("Invalid input. \nChoose an option: \n1. Automatically generate a deck. \n2. Import a deck.\n")
+        
 # YOUR CODE FOR OPTION 1 GOES HERE
 # In option 1 somewhere you need to and MUST have a call like this:
 # board=create_board(size)
