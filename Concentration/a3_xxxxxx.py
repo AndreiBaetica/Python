@@ -45,6 +45,12 @@ def print_revealed(discovered, p1, p2, original_board):
     Preconditions: p1 & p2 must be integers ranging from 1 to the length of the board
     '''
     # YOUR CODE GOES HERE
+    discovered[p1]=original_board[p1]
+    discovered[p2]=original_board[p2]
+    
+    print_board(discovered)
+    
+    
     
 
 #############################################################################
@@ -74,7 +80,11 @@ def clean_up_board(l):
     playable_board=[]
 
     # YOUR CODE GOES HERE
-    
+    playable_board=l
+    playable_board.remove('*')
+    for i in playable_board:
+        if playable_board.count(i) != 2:
+            playable_board.remove(i)
     return playable_board
 
 
@@ -106,27 +116,116 @@ def play_game(board):
 
     # this is the funciton that plays the game
     # YOUR CODE GOES HERE
+    discovered=[]
+    discovered_count=0
+    while discovered_count <= len(board)-1:
+        discovered.append('*')
+        discovered_count=discovered_count+1
+    
+    
+    tries=0
+    
+    while discovered!=board:
+        print_board(discovered)
+        print('\nEnter two distinct positions on the board that you want revealed.\ni.e two integers in the range [1, '+str(len(board)+1)+']')
+        p1=int(input('\nEnter position 1: '))
+        p1=p1-1
+        p2=int(input('Enter position 2: '))
+        p2=p2-1
+        while p1==p2:
+            print('Invalid input. Position 1 cannot equal position 2. \nEnter two distinct positions on the board that you want revealed.\ni.e two integers in the range [1, '+str(len(board)+1)+']')
+            p1=int(input('\nEnter position 1: '))
+            p1=p1-1
+            p2=int(input('Enter position 2: '))
+            p2=p2-1
+            print('This try did not count. Total tries: '+str(tries))
+        while discovered[p1]==board[p1]:
+            print('Invalid input. Position 1 has already been revealed. \nEnter two distinct positions on the board that you want revealed.\ni.e two integers in the range [1, '+str(len(board)+1)+']')
+            p1=int(input('\nEnter position 1: '))
+            p1=p1-1
+            p2=int(input('Enter position 2: '))
+            p2=p2-1
+            print('This try did not count. Total tries: '+str(tries))
+        while discovered[p2]==board[p2]:
+            print('Invalid input. Position 2 has already been revealed. \nEnter two distinct positions on the board that you want revealed.\ni.e two integers in the range [1, '+str(len(board)+1)+']')
+            p1=int(input('\nEnter position 1: '))
+            p1=p1-1
+            p2=int(input('Enter position 2: '))
+            p2=p2-1
+            print('This try did not count. Total tries: '+str(tries))
+        while discovered[p1]==board[p1] and discovered[p2]==board[p2]:
+            print('Invalid input. Both positions have already been revealed. \nEnter two distinct positions on the board that you want revealed.\ni.e two integers in the range [1, '+str(len(board)+1)+']')
+            p1=int(input('\nEnter position 1: '))
+            p1=p1-1
+            p2=int(input('Enter position 2: '))
+            p2=p2-1
+            print('This try did not count. Total tries: '+str(tries))
+        
+        print_revealed(discovered, p1, p2, board)
+        if discovered[p1]!=discovered[p2]:
+            discovered[p1]='*'
+            discovered[p2]='*'
+        print()
+        wait_for_player()
+        print('\n'*20)
 
+        tries=tries+1
+
+    
+    print('Congratulations! You completed the game with '+str(tries)+' guesses. That is '+str(len(board)//2)+' more than the best possible.')
+
+    
 
 
 
 #main
     
 # YOUR CODE TO GET A CHOICE 1 or CHOCE 2 from a player GOES HERE
-choice = input('Choose an option: \n1. Automatically generate a deck. \n2. Import a deck.\n')
+def ascii_name_plaque(name):
+    '''
+    (str)->none
+    Prints the name surrounded by a box of *
+    '''
+    print((10+len(name))*'*')
+    print('*'+(8+len(name))*' '+'*')
+    print('*  __'+name+'__  *')
+    print('*'+(8+len(name))*' '+'*')
+    print((10+len(name))*'*')
+ascii_name_plaque('Welcome to my Concentration game')
+
+choice = input('Would you like (enter 1 or 2 to indicate your choice): \n(1) me to generate a rigorous deck of cards for you \n(2) or, would you like me to read a deck from a file?\n')
 while True:
     try:
         choice=int(choice)
         if choice != 1 and choice != 2:
-            choice=input("Invalid input. \nChoose an option: \n1. Automatically generate a deck. \n2. Import a deck.\n")
+            choice=input(str(choice)+' is not existing option. Please try again. Enter 1 or 2 to indicate your choice\n')
         else:
             break
     except ValueError:
-        choice=input("Invalid input. \nChoose an option: \n1. Automatically generate a deck. \n2. Import a deck.\n")
+        choice=input(str(choice)+' is not existing option. Please try again. Enter 1 or 2 to indicate your choice\n')
         
 # YOUR CODE FOR OPTION 1 GOES HERE
 # In option 1 somewhere you need to and MUST have a call like this:
-# board=create_board(size)
+if choice==1:
+    print('You have chosen to have a rigorous deck generated for you \n')
+    size = input('How many cards do you want to play with? \n Enter an even number between 0 and 52: ')
+    while True:
+        try:
+            size=int(size)
+            if 2<=size<=52 and size%2==0:
+                break
+            else:
+                size = input('How many cards do you want to play with? \n Enter an even number between 0 and 52: ')
+        except ValueError:
+            size = input('How many cards do you want to play with? \n Enter an even number between 0 and 52: ')
+    board=create_board(size)
+    print("Shuffling the deck...")
+    shuffle_deck(board)
+    print()
+    wait_for_player()
+    print('\n'*20)
+    play_game(board)
+    
 
 # YOUR CODE FOR OPTION 2 GOES HERE
 # In option 2 somewhere you need to and MUST have the following 4 lines of code one after another
@@ -136,4 +235,5 @@ while True:
 #file=file.strip()
 #board=read_raw_board(file)
 #board=clean_up_board(board)
+
 
