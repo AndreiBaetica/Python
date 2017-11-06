@@ -33,7 +33,17 @@ def high_school_eqsolver(a,b,c):
     (number,number,number)->none
     returns roots of a quadratic formula with coefficients a, b, and c.
     '''
+    equation=str(a)+'x^2+'+str(b)+'x+'+str(c)
+    discriminant=b**2-4*a*c
+    if discriminant>0:
+        x1 = (-b+math.sqrt(b**2-4*a*c))/2*a
+        x2 = (-b-math.sqrt(b**2-4*a*c))/2*a
+        print("This equation has two solutions: ", x1, " and", x2)
+    elif discriminant==0:
+        x = (-b+math.sqrt(b**2-4*a*c))/2*a
+        print("This equation has one solutions: ", x)
     pass
+
 
 
 
