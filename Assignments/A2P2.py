@@ -55,3 +55,38 @@ def countMembers(s):
         if i in list:
             tally=tally+1
     return tally
+
+def casual_number(s):
+    '''
+    (str)->int
+    Removes commas from numbers.
+    '''
+    try:
+        return int(s.replace(',',''))
+    except ValueError:
+        return None
+
+    
+def alienNumbers(s):
+    '''
+    (str)->int
+    Translates alien symbol sequences into numbers.
+    Preconditions: s is comprised only of alien symbols.
+    '''
+    list=[]
+    for i in s:
+        list.append(i)
+    for idx, i in enumerate(list):
+        if list[idx]=='T':
+            list[idx]=1024
+        if list[idx]=='y':
+            list[idx]=598
+        if list[idx]=='!':
+            list[idx]=121
+        if list[idx]=='a':
+            list[idx]=42
+        if list[idx]=='N':
+            list[idx]=6
+        if list[idx]=='U':
+            list[idx]=1
+    return sum(list)
