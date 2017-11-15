@@ -90,3 +90,43 @@ def alienNumbers(s):
         if list[idx]=='U':
             list[idx]=1
     return sum(list)
+
+def alienNumbersAgain(s):
+    '''
+    (str)->int
+    Translates alien symbol sequences into numbers.
+    Preconditions: s is comprised only of alien symbols.
+    '''
+    #Code is the same as before because no string methods were used to begin with.
+    list=[]
+    for i in s:
+        list.append(i)
+    for idx, i in enumerate(list):
+        if list[idx]=='T':
+            list[idx]=1024
+        if list[idx]=='y':
+            list[idx]=598
+        if list[idx]=='!':
+            list[idx]=121
+        if list[idx]=='a':
+            list[idx]=42
+        if list[idx]=='N':
+            list[idx]=6
+        if list[idx]=='U':
+            list[idx]=1
+    return sum(list)
+
+
+def encrypt(s):
+    '''
+    (str)-str
+    Encrypts a string.
+    '''
+    s1= s[::-1]
+    s2= ""
+    for i in range((len(s)//2)):
+        s2 = s2 + s1[i] + s[i]
+        if (len(s)%2 != 0) & (i == (len(s)/2 - 1)) :
+            s2 = s2 + s1[i+1]
+    return s2
+
